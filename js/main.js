@@ -5,8 +5,22 @@ const products = [
     {id: 4, title: 'Gamepad', price: 50},
 ];
 //Функция для формирования верстки каждого товара
-const renderProduct = (title = "Название товара", price = 10) => {
-    return `<div class="products__item">
+// const renderProduct = (title = "Название товара", price = 10) => {
+//     return `<div class="products__item">
+//                 <div class="products__img-wrapper">
+//                     <img src="img/${title}.jpg" class="products__img" alt="${title}">
+//                 </div>
+//                 <div class="products__wrapper-info">
+//                     <h3 class="products__title">${title}</h3>
+//                     <p class="products__price">${price}</p>
+//                     <button class="products__buy-btn">Купить</button>
+//                 </div>
+//             </div>`
+// };
+
+
+const renderProduct = (title = "Название товара", price = 10) => 
+        `<div class="products__item">
                 <div class="products__img-wrapper">
                     <img src="img/${title}.jpg" class="products__img" alt="${title}">
                 </div>
@@ -15,8 +29,7 @@ const renderProduct = (title = "Название товара", price = 10) => {
                     <p class="products__price">${price}</p>
                     <button class="products__buy-btn">Купить</button>
                 </div>
-            </div>`
-};
+            </div>`;
 
 const renderPage = list => list.forEach(item => document.querySelector('.products__wrapper').innerHTML += renderProduct(item.title, item.price));
 
